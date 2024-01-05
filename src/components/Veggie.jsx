@@ -89,9 +89,9 @@ const Card = styled.div`
         width: 100%;
         text-align: center;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.2rem;
         height: 40%;
-        margin-top: 70%;
+        top: 70%;
         display: flex;
         justify-content: center;
         align-items: center;

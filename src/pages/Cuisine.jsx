@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+//import {motion} from 'framer-motion';
 import {Link, useParams} from 'react-router-dom';
 
 
@@ -8,15 +8,16 @@ function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
   let params = useParams();
 
-  const getCuisine = async (name)   =>{
+  const getCuisine = async (name) =>{
     const data = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
     const recipes = await data.json();
     setCuisine(recipes.results);
-    console.log(recipes);
+    //console.log(`THE RECIPE IS${recipes}`);
+    //console.log(`THE CUISINE IS ${cuisine}`);
   };
 
   useEffect(() =>{
-    getCuisine(params.type);
+    getCuisine(params.type); 
     console.log(params);
   }, [params.type]);
 
@@ -25,7 +26,7 @@ function Cuisine() {
       {cuisine.map((item) =>{
         return(
           <Card key={item.id}>
-            <img src="item.image" alt="" />
+            <img src={item.image} alt="" />
             <h4>{item.title}</h4>
           </Card>
         )
@@ -50,28 +51,7 @@ const Card = styled.div`
 
     img{
         border-radius: 2rem;
-        position: absolute;
-        left: 0;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    p{
-        position: absolute;
-        z-index: 10;
-        left: 50%;
-        bottom: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        width: 100%;
-        text-align: center;
-        font-weight: 600;
-        font-size: 1rem;
-        height: 40%;
-        margin-top: 70%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     a{
       text-decoration: none;
@@ -83,4 +63,4 @@ const Card = styled.div`
 `;
 
 
-export default Cuisine
+export default Cuisine;

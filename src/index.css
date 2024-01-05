@@ -13,7 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0% 20%;
-  background: rgb(215, 215, 216);
+  /*background: rgb(215, 215, 215);*/
+
 }
 
 code {

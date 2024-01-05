@@ -69,6 +69,8 @@ const Card = styled.div`
     min-height: 25rem; 
     border-radius: 2rem;
     overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.400);
+    ;
 
     img{
         border-radius: 2rem;
@@ -78,6 +80,12 @@ const Card = styled.div`
         height: 100%;
         object-fit: cover;
     }
+
+    img: hover{
+        width: 120%;
+        height: 120%;
+    }
+
     p{
         position: absolute;
         z-index: 10;
@@ -88,7 +96,7 @@ const Card = styled.div`
         width: 100%;
         text-align: center;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.2rem;
         height: 40%;
         top: 70%;
         display: flex;
